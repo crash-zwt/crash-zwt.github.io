@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2024 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Python 类的学习学习1 1234567891011class VocabDict():    def __init__(self, *args, **kwargs) -&gt; None:        &#x27;&#x27;&#x27;        args:(1,2,3) type:tuple        kwargs:&#123;&#x27;rr&#x27;:1, &#x27;t">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2024/index.html">
+<meta property="og:url" content="http://example.com/2024/01/18/Python%20%E7%B1%BB%E7%9A%84%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Python 类的学习学习1 1234567891011class VocabDict():    def __init__(self, *args, **kwargs) -&gt; None:        &#x27;&#x27;&#x27;        args:(1,2,3) type:tuple        kwargs:&#123;&#x27;rr&#x27;:1, &#x27;t">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-01-17T16:14:14.535Z">
+<meta property="article:modified_time" content="2024-01-17T16:14:14.536Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,235 +154,160 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Python 类的学习" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Python-类的学习"><a href="#Python-类的学习" class="headerlink" title="Python 类的学习"></a>Python 类的学习</h1><p>学习1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">VocabDict</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, *args, **kwargs</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">        args:(1,2,3) type:tuple</span></span><br><span class="line"><span class="string">        kwargs:&#123;&#x27;rr&#x27;:1, &#x27;tt&#x27;:6, &#x27;uu&#x27;:8&#125;</span></span><br><span class="line"><span class="string">        &#x27;&#x27;&#x27;</span></span><br><span class="line">        vocabs = <span class="built_in">dict</span>(kwargs) <span class="comment">#当kwargs为dict时，不会报错</span></span><br><span class="line">        <span class="built_in">print</span>(vocabs)</span><br><span class="line"></span><br><span class="line">VocabDict(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,rr=<span class="number">1</span>,tt=<span class="number">6</span>,uu=<span class="number">8</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>学习2: <code>@abstractmethod</code> 强制子类必须重写&#96;&#96;predict()&#96;方法,否则报错, 继承ABC就是抽象类，抽象类不能直接实例化，必须子类继承.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> abc <span class="keyword">import</span> ABC, abstractmethod</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Component</span>( <span class="title class_ inherited__">ABC</span>):</span><br><span class="line"><span class="meta">    @abstractmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">self, *args, **kwargs</span>):</span><br><span class="line">        <span class="keyword">raise</span> NotImplementedError(<span class="string">&#x27;%s.%s()&#x27;</span> % (self.__class__.__name__, inspect.stack()[<span class="number">0</span>][<span class="number">3</span>]))</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__call__</span>(<span class="params">self, *args, **kwargs</span>): <span class="comment">#__call__()：该方法可以把类当成函数直接调用，当调用时，直接运行__call__</span></span><br><span class="line">        <span class="keyword">return</span> self.predict(self, *args, **kwargs)</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">test</span>(<span class="title class_ inherited__">Component</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,a,b</span>):</span><br><span class="line">        self.a = <span class="number">1</span></span><br><span class="line">        self.b = <span class="number">2</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;初始化成功&quot;</span>)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">self, *args, **kwargs</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;成功调用了predict()方法&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">test(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">注释掉predict() 报错</span></span><br><span class="line"><span class="string">TypeError: Can&#x27;t instantiate abstract class test with abstract method predict</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">tt = test(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">tt() <span class="comment">#就是调用predict()</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">打印“成功调用了predict()方法”</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>学习3: <code>__getattr__</code> 和 <code>__setattr__</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#当我们访问一个不存在的属性的时候，会抛出异常，提示我们不存在这个属性。而这个异常就是__getattr__方法抛出的，其原因在于他是访问#一个不存在的属性的最后落脚点，作为异常抛出的地方提示出错再适合不过了。</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, value</span>):</span><br><span class="line">        self.value = value</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__getattr__</span>(<span class="params">self, item</span>):</span><br><span class="line">        <span class="built_in">print</span> <span class="string">&quot;into __getattr__&quot;</span></span><br><span class="line">        <span class="keyword">return</span>  <span class="string">&quot;can not find&quot;</span></span><br><span class="line"> </span><br><span class="line">a = A(<span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span> a.value</span><br><span class="line"><span class="comment"># 10</span></span><br><span class="line"><span class="built_in">print</span> a.name</span><br><span class="line"><span class="comment"># into __getattr__</span></span><br><span class="line"><span class="comment"># can not find</span></span><br><span class="line"><span class="comment"># 可以看出，访问存在的属性时，会正常返回值，若该值不存在，则会进入最后的兜底函数__getattr__。</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>学习3：继承<code>dict</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SerializableDict</span>(<span class="title class_ inherited__">dict</span>):</span><br><span class="line">    <span class="comment"># def save_json(self, path):</span></span><br><span class="line">    <span class="comment">#     save_json(self, path)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">copy_from</span>(<span class="params">self, item</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">isinstance</span>(item, <span class="built_in">dict</span>):</span><br><span class="line">            self.clear()</span><br><span class="line">            self.update(item)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__getattr__</span>(<span class="params">self, key</span>):</span><br><span class="line">        <span class="keyword">if</span> key.startswith(<span class="string">&#x27;__&#x27;</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">dict</span>.__getattr__(key)</span><br><span class="line">        <span class="keyword">return</span> self.__getitem__(key)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__setattr__</span>(<span class="params">self, key, value</span>):</span><br><span class="line">        <span class="keyword">return</span> self.__setitem__(key, value)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">to_dict</span>(<span class="params">self</span>) -&gt; <span class="built_in">dict</span>:</span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">teet</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, *args, **kwargs</span>):</span><br><span class="line">        self.config = SerializableDict(kwargs)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tt = teet(a=<span class="number">1</span>, b=<span class="number">2</span>, c=<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(tt.config.a)</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/209%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/01/18/Python%20%E7%B1%BB%E7%9A%84%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/internship_day2/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E4%BF%9D%E7%A0%94%E5%92%B8%E9%B1%BC/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2024/01/18/%E5%AE%9E%E4%B9%A0%E6%9C%9F%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/01/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8%E8%B7%9D%E7%A6%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.590Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.589Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/K%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.589Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.589Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%EF%BC%88%E4%B8%8A%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.589Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/NER%E6%A0%87%E6%B3%A8%E5%87%86%E6%B5%8B/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.588Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2024/page/2/">2</a><a class="extend next" rel="next" href="/archives/2024/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -402,8 +331,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

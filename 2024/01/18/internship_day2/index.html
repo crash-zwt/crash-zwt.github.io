@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2024 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="12ls -a #查看隐藏文件ls -al #查看当前目录下的 所有文件及文件夹（包括隐藏的.和…等的详细信息） Linux非root用户安装软件步骤下面是Linux下非root用户安装软件的一般流程：  获取源代码；常用wget&#x2F;curl下载，也可以用类似apt-get source的方式获取仓库中软件源代码；解压源代码安装包；例如对于gzip格式的tar包：tar -zxvf xxx">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2024/index.html">
+<meta property="og:url" content="http://example.com/2024/01/18/internship_day2/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="12ls -a #查看隐藏文件ls -al #查看当前目录下的 所有文件及文件夹（包括隐藏的.和…等的详细信息） Linux非root用户安装软件步骤下面是Linux下非root用户安装软件的一般流程：  获取源代码；常用wget&#x2F;curl下载，也可以用类似apt-get source的方式获取仓库中软件源代码；解压源代码安装包；例如对于gzip格式的tar包：tar -zxvf xxx">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-01-17T16:14:14.591Z">
+<meta property="article:modified_time" content="2024-01-17T16:14:14.591Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,235 +154,156 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-internship_day2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls -a #查看隐藏文件</span><br><span class="line">ls -al #查看当前目录下的 所有文件及文件夹（包括隐藏的.和…等的详细信息）</span><br></pre></td></tr></table></figure>
+<p><strong>Linux非root用户安装软件步骤</strong><br>下面是Linux下非root用户安装软件的一般流程：</p>
+<ul>
+<li>获取源代码；常用wget&#x2F;curl下载，也可以用类似apt-get source的方式获取仓库中软件源代码；<br>解压源代码安装包；例如对于gzip格式的tar包：tar -zxvf xxx.tar.gz；</li>
+<li>切换到解压后的目录，运行 .&#x2F;configure;.&#x2F;configure –help可以列出配置项，非root用户最重要的配置项是安装目录prefix，例如 .&#x2F;configure –prefix&#x3D;&#x2F;path&#x2F;to&#x2F;bin。在无法自动找到依赖库位置的情况下，用 –with-xx-dir&#x3D;xxx 的形式配置依赖库位置；<br>编译源代码并复制可执行文件到指定的安装目录： make &amp;&amp;  make install。这两条命令可以分开执行，make时指定 -j 参数并行编译，能显著减少编译耗时（单进程编译GCC需要几个小时，开启并行编译后可缩短到十几分钟）；</li>
+<li>使用export PATH&#x3D;&#x2F;path&#x2F;to&#x2F;bin:$PATH更新PATH变量。命令行窗口运行此命令只对本次会话中有效，可将其写到.bashrc或者.bash_profile中；</li>
+<li>如果安装的是动态链接库，则需要更新动态链接库路径： export LD_LIBRARY_PATH&#x3D;&#x2F;path&#x2F;to&#x2F;library:$LD_LIBRARY_PATH。最好将此命令写在.bashrc文件中，用户下次打开会话时自动执行。</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/209%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/01/18/internship_day2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/internship_day2/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E4%BF%9D%E7%A0%94%E5%92%B8%E9%B1%BC/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2024/01/18/209%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/01/18/%E4%BF%9D%E7%A0%94%E5%92%B8%E9%B1%BC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.590Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.589Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/K%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.589Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.589Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%EF%BC%88%E4%B8%8A%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.589Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/NER%E6%A0%87%E6%B3%A8%E5%87%86%E6%B5%8B/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.588Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2024/page/2/">2</a><a class="extend next" rel="next" href="/archives/2024/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -402,8 +327,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

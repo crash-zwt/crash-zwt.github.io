@@ -152,30 +152,15 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-209长度最小的子数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/01/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2024/01/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2024-01-17T02:43:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-17</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<p>–</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a target="_blank" rel="noopener" href="http://www.codesheep.cn/">www.codesheep.cn</a></p>
+        <h1 id="209长度最小的子数组"><a href="#209长度最小的子数组" class="headerlink" title="209长度最小的子数组"></a>209长度最小的子数组</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个含有 <code>n</code> 个正整数的数组和一个正整数 <code>target</code> <strong>。</strong></p>
+<p>找出该数组中满足其总和大于等于 <code>target</code> 的长度最小的 <strong>连续子数组</strong> <code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，并返回其长度<strong>。</strong>如果不存在符合条件的子数组，返回 <code>0</code> 。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans = INT_MAX;</span><br><span class="line">        <span class="type">int</span> start = <span class="number">0</span>, end = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (end &lt; n) &#123;</span><br><span class="line">            sum += nums[end];</span><br><span class="line">            <span class="keyword">while</span> (sum &gt;= target) &#123;</span><br><span class="line">                ans = <span class="built_in">min</span>(ans, end - start + <span class="number">1</span>);</span><br><span class="line">                sum -= nums[start];</span><br><span class="line">                start++;</span><br><span class="line">            &#125; </span><br><span class="line">            end++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans == INT_MAX ? <span class="number">0</span> : ans;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -188,7 +173,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2024/01/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
+          <a class="article-more-a" href="/2024/01/18/209%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/">展开全文 >></a>
         </p>
       
 
@@ -218,39 +203,19 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-internship_day2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/01/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2024/01/17/hello-world/" class="archive-article-date">
-  	<time datetime="2024-01-17T02:41:07.924Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-17</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls -a #查看隐藏文件</span><br><span class="line">ls -al #查看当前目录下的 所有文件及文件夹（包括隐藏的.和…等的详细信息）</span><br></pre></td></tr></table></figure>
+<p><strong>Linux非root用户安装软件步骤</strong><br>下面是Linux下非root用户安装软件的一般流程：</p>
+<ul>
+<li>获取源代码；常用wget&#x2F;curl下载，也可以用类似apt-get source的方式获取仓库中软件源代码；<br>解压源代码安装包；例如对于gzip格式的tar包：tar -zxvf xxx.tar.gz；</li>
+<li>切换到解压后的目录，运行 .&#x2F;configure;.&#x2F;configure –help可以列出配置项，非root用户最重要的配置项是安装目录prefix，例如 .&#x2F;configure –prefix&#x3D;&#x2F;path&#x2F;to&#x2F;bin。在无法自动找到依赖库位置的情况下，用 –with-xx-dir&#x3D;xxx 的形式配置依赖库位置；<br>编译源代码并复制可执行文件到指定的安装目录： make &amp;&amp;  make install。这两条命令可以分开执行，make时指定 -j 参数并行编译，能显著减少编译耗时（单进程编译GCC需要几个小时，开启并行编译后可缩短到十几分钟）；</li>
+<li>使用export PATH&#x3D;&#x2F;path&#x2F;to&#x2F;bin:$PATH更新PATH变量。命令行窗口运行此命令只对本次会话中有效，可将其写到.bashrc或者.bash_profile中；</li>
+<li>如果安装的是动态链接库，则需要更新动态链接库路径： export LD_LIBRARY_PATH&#x3D;&#x2F;path&#x2F;to&#x2F;library:$LD_LIBRARY_PATH。最好将此命令写在.bashrc文件中，用户下次打开会话时自动执行。</li>
+</ul>
 
       
 
@@ -263,7 +228,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2024/01/17/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2024/01/18/internship_day2/">展开全文 >></a>
         </p>
       
 
@@ -293,6 +258,629 @@
 
 
   
+    <article id="post-保研咸鱼" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="保研"><a href="#保研" class="headerlink" title="保研"></a>保研</h1><h2 id="AI-cs-自动化-四非-双非-保研"><a href="#AI-cs-自动化-四非-双非-保研" class="headerlink" title="AI&#x2F;cs&#x2F;自动化&#x2F;四非&#x2F;双非&#x2F;&#x2F;保研"></a>AI&#x2F;cs&#x2F;自动化&#x2F;四非&#x2F;双非&#x2F;&#x2F;保研</h2><p>学长今年9 29保研电子科技大学计算机学院，本科学院层次为四非，本人大一大二是自动化专业的，可以算做是转专业上岸计算机了，本人夏令营和预推免参加了多所985、211学校，其中大部分学校面试综合成绩都名列前茅，顺利拿到了学硕名额，具有丰富的面试经历。并且身边同学也有非常多的复旦、清北名校上岸，如果有小伙伴愿意进行保研规划辅导，可以咨询我，我非常愿意解答大家遇到的困惑（淋过雨的人愿意给学弟学妹们撑把伞）。</p>
+<p>此外目前学长这里还有许多保研文书模板，包括个人简历、个人陈述、导师推荐信、套磁邮件、面试PPT、以及英语口语的互答。</p>
+<p>除此，对于计算机强校（自动化保研也ok）的保研定位也有一定的见解，可以根据学弟学妹的个人情况，制定合理的冲、保、稳学校。</p>
+<p>学弟学妹注意了，计算机专业众所周知，是非常热门的专业，所以保研去985高校计算机竞争非常激烈，学弟学妹们需要提前做好各类专业课和计算机机式的准备。我这里也有408专业课+数据库+高数+线代+概率论等复习资料，可以帮助学弟学妹们在短时间类掌握保研面试常问的专业课知识，回答时做到游刃有余。</p>
+<p>由于目前疫情时期已经过去了，今年几乎所有学校的保研都是线下了，以后更是如此。咸鱼上目前也有很多学姐学长们在发保研咨询，但是他们大多数是22年或以前的了，他们是线上，可能参考价值不大。线下面试和线上面试区别很大，并且海投的机会也不多了，金钱成本和时间成本非常大，学弟学妹要对自身情况有个清晰的定位，才能在保证在线下参营的情况下，上岸梦想&#x2F;名校。</p>
+<p>提供的服务有：</p>
+<p>全程答疑：全程问题答疑+聊天缓解压力；<br>全程辅导：从现在开始到保研结束，提供答疑以及以下全部服务；<br>文书撰写：简历+个人陈述+推荐信<br>面试模拟：模拟面试环境和真实问题，复盘找出问题，并给你更好的作答模板和思路帮你改进面试表现！帮助你顺利优营。包括压力面闲聊面等（不真实模拟永远不知道自己问题所在）<br>面经真题分享：自己及身边同学学长学姐参加相关院校面试问题文档。</p>
+<p>保研时间进度规划，与其无所事事感到焦虑和精神内耗，不如有的放矢做准备，避免盲目努力！不知道的都可以来问我哦～</p>
+<p>一些同学对可能担心辅导质量，这里可以分期付款 先付60% 928上岸之后补剩下的40%</p>
+<p>最后非常希望大家珍惜每一次宝贵的比赛和项目经历，祝愿大家都以三年的汗水可以换一个自己满意的去处，不留遗憾。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/01/18/%E4%BF%9D%E7%A0%94%E5%92%B8%E9%B1%BC/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><p>注意：实验部分<code>arr[] = [0,3,2,4,1]</code> 数组的有效元素存储从下标为1开始，并且排序后的数组默认升序。</p>
+<h2 id="比较类排序"><a href="#比较类排序" class="headerlink" title="比较类排序"></a>比较类排序</h2><h3 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h3><h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><p>思想：冒泡排序是<strong>交换类排序</strong>的一种，主要考虑相邻两个元素之间进行交换，从左到右，如果前面的数字比后一个数值大，就进行交换，最终数组的元素越小的依次会交换到数组前端，如同冒泡浮出水面（名字由来）。</p>
+<p>C++代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> n = <span class="number">10</span>; <span class="comment">// 数组大小</span></span><br><span class="line"><span class="type">int</span> arr[n+<span class="number">1</span>] = &#123;<span class="number">0</span>,<span class="number">10</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BubbleSort</span><span class="params">(<span class="type">int</span>* arr, <span class="type">int</span> length)</span> </span>&#123; <span class="comment">// length:数组大小</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= length - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123; <span class="comment">//交换元素</span></span><br><span class="line">                <span class="type">int</span> temp = arr[j + <span class="number">1</span>];</span><br><span class="line">                arr[j + <span class="number">1</span>] = arr[j];</span><br><span class="line">                arr[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">BubbleSort</span>(arr, n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        cout &lt;&lt; arr[i] &lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：O(n^2^)；空间复杂度：O(1)；稳定。</p>
+<p>####快速排序</p>
+<p>思想：快速排序也是<strong>交换类排序</strong>的一种，它主要是选择一个元素作为中心元素（通常选择数组第一个元素），然后通过双指针不断的从前往后和从后往前判断元素大小并进行交换，最终使中心元素的左边数组的值比中心元素小，中心数组右边的元素比中心数组大。实现方式：递归实现</p>
+<p>C++代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> n = <span class="number">10</span>; <span class="comment">// 数组大小</span></span><br><span class="line"><span class="type">int</span> arr[n+<span class="number">1</span>] = &#123;<span class="number">0</span>,<span class="number">10</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="comment">// 首先实现双指正元素交换算法，获得中心元素位置</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">Partition</span><span class="params">(<span class="type">int</span>* arr, <span class="type">int</span> low, <span class="type">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> pivot = arr[low];</span><br><span class="line">    <span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="keyword">while</span> (low &lt; high &amp;&amp; arr[high] &gt;= pivot) high--; <span class="comment">//从后往前寻找到比中心元素小的值</span></span><br><span class="line">        arr[low] = arr[high]; <span class="comment">//</span></span><br><span class="line">        <span class="comment">// cout &lt;&lt; &quot;11&quot;;</span></span><br><span class="line">        <span class="keyword">while</span> (low &lt; high &amp;&amp; arr[low] &lt;= pivot) low++; <span class="comment">//从前往后寻找到比中心元素大的值</span></span><br><span class="line">        arr[high] = arr[low];</span><br><span class="line">    &#125;</span><br><span class="line">    arr[low] = pivot; <span class="comment">//最终low=high,中心元素就放low位置</span></span><br><span class="line">    <span class="keyword">return</span> low; <span class="comment">//返回中心元素下标</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">QuickSort</span><span class="params">(<span class="type">int</span>* arr, <span class="type">int</span> low, <span class="type">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (low &gt;= high) <span class="keyword">return</span>; <span class="comment">//递归出口</span></span><br><span class="line">    <span class="type">int</span> pivotIndex = <span class="built_in">Partition</span>(arr, low, high);</span><br><span class="line">    <span class="built_in">QuickSort</span>(arr, low, pivotIndex - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">QuickSort</span>(arr, pivotIndex + <span class="number">1</span>, high);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">QuickSort</span>(arr,<span class="number">1</span>,n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        cout &lt;&lt; arr[i] &lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：O(nlogn)；空间复杂度：O(logn)；由于前后进行了交换，所以不稳定。当初始数组为逆序或者有序时，快排效率最低.</p>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><h4 id="简单插入排序"><a href="#简单插入排序" class="headerlink" title="简单插入排序"></a>简单插入排序</h4><p>思想：首先将数组分为排序好的区域和未排序的区域，再从未排序区域中依次取出元素插入到已排序数组的适当位置。</p>
+<p>C++实现</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> n = <span class="number">10</span>; <span class="comment">// 数组大小</span></span><br><span class="line"><span class="type">int</span> arr[n+<span class="number">1</span>] = &#123;<span class="number">0</span>,<span class="number">10</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InsertSort</span><span class="params">(<span class="type">int</span>* arr, <span class="type">int</span> length)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 使用哨兵法</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= length; i++) &#123;</span><br><span class="line">        arr[<span class="number">0</span>] = arr[i]; </span><br><span class="line">        <span class="type">int</span> j;</span><br><span class="line">        <span class="keyword">for</span> (j = i - <span class="number">1</span>; arr[j] &gt; arr[<span class="number">0</span>]; j--) &#123;</span><br><span class="line">            arr[j + <span class="number">1</span>] = arr[j]; <span class="comment">//位置后移</span></span><br><span class="line">        &#125;</span><br><span class="line">        arr[j + <span class="number">1</span>] = arr[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">InsertSort</span>(arr, n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        cout &lt;&lt; arr[i] &lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：O(n^2^)；空间复杂度：O(1)；稳定</p>
+<h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><p>思想：希尔排序主要利用当<strong>数组元素基本有序的时候或者n的值不大的时候，插入排序的效率最高</strong>这个特点，核心点是：先使组数大体上有序，再最后使用一次简单插入排序即可。</p>
+<p>C++实现</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> n = <span class="number">10</span>; <span class="comment">// 数组大小</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> L = <span class="number">2</span>; <span class="comment">//增量数量</span></span><br><span class="line"><span class="type">int</span> arr[n+<span class="number">1</span>] = &#123;<span class="number">0</span>,<span class="number">10</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="type">int</span> dkt[L] = &#123;<span class="number">1</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ShellInsert</span><span class="params">(<span class="type">int</span>* arr, <span class="type">int</span> length, <span class="type">int</span> dk)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = dk + <span class="number">1</span>; i &lt;= length; i ++) &#123;</span><br><span class="line">        arr[<span class="number">0</span>] = arr[i]; <span class="comment">//哨兵</span></span><br><span class="line">        <span class="type">int</span> j;</span><br><span class="line">        <span class="keyword">for</span> (j = i - dk;j &gt; <span class="number">0</span>&amp;&amp;arr[j] &gt; arr[<span class="number">0</span>]; j -= dk) &#123;</span><br><span class="line">            arr[j + dk] = arr[j];</span><br><span class="line">        &#125;</span><br><span class="line">        arr[j + dk] = arr[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ShellSort</span><span class="params">(<span class="type">int</span>* arr, <span class="type">int</span> lenght, <span class="type">int</span>* dkt, <span class="type">int</span> L)</span> </span>&#123; <span class="comment">//dkt:增量序列，n增量个数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = L - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="built_in">ShellInsert</span>(arr,lenght,dkt[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">ShellSort</span>(arr, n, dkt, L);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        cout &lt;&lt; arr[i] &lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度O(n^1.3^)；空间复杂度O(n)；不稳定（大区域的交换）</p>
+<p>###选择排序</p>
+<h4 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h4><p>思想：首先将数组划分为已排好序和未排好序的区域，然后依次在未排好序区域中寻找最小值，并将其添到已排好序区域最后。</p>
+<p>C++实现</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> n = <span class="number">10</span>; <span class="comment">// 数组大小</span></span><br><span class="line"><span class="type">int</span> arr[n+<span class="number">1</span>] = &#123;<span class="number">0</span>,<span class="number">10</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">SelectSort</span><span class="params">(<span class="type">int</span>* arr, <span class="type">int</span> length)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> minIndex;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; length; i++) &#123;</span><br><span class="line">        minIndex = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt;= length; j++) &#123; <span class="comment">//遍历最小值</span></span><br><span class="line">            <span class="keyword">if</span> ( arr[j] &lt; arr[minIndex]) arr[i] = arr[minIndex];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">SelectSort</span>(arr, n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        cout &lt;&lt; arr[i] &lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：O(n^2^)；空间复杂度：O(1)；稳定；</p>
+<h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p>思想：堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</p>
+<p>C++实现</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> n = <span class="number">10</span>; <span class="comment">// 数组大小</span></span><br><span class="line"><span class="type">int</span> arr[n+<span class="number">1</span>] = &#123;<span class="number">0</span>,<span class="number">10</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">HeapAdjust</span><span class="params">(<span class="type">int</span>* arr, <span class="type">int</span> s, <span class="type">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> sc = arr[s];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">2</span> * s; j &lt;= m; j *= <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span> ( j &lt; m &amp;&amp; arr[j+<span class="number">1</span>] &lt; arr[j]) j++;<span class="comment">//取更小</span></span><br><span class="line">        <span class="keyword">if</span> (sc &lt;= arr[j]) <span class="keyword">break</span>;</span><br><span class="line">        arr[s] = arr[j];</span><br><span class="line">        s = j;</span><br><span class="line">    &#125;</span><br><span class="line">    arr[s] = sc;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">HeapSort</span><span class="params">(<span class="type">int</span>* arr, <span class="type">int</span> length)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 初始化堆</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = length / <span class="number">2</span>; i &gt; <span class="number">0</span>; i--) <span class="built_in">HeapAdjust</span>(arr, i, length);</span><br><span class="line">    <span class="type">int</span> temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = length; i &gt; <span class="number">1</span>; i--) &#123;</span><br><span class="line">        temp = arr[i];</span><br><span class="line">        arr[i] = arr[<span class="number">1</span>];</span><br><span class="line">        arr[<span class="number">1</span>] = temp;</span><br><span class="line">        <span class="built_in">HeapAdjust</span>(arr, <span class="number">1</span>, i - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">HeapSort</span>(arr, n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = n; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">        cout &lt;&lt; arr[i] &lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：O(nlog<del>2</del>n)；空间复杂度：O(1)；不稳定；堆排序没有最好和最坏数据记录初始状态无关；它不适用于待排序记录个数<br>较少的情况，但对于n较大的文件还是很有效的。</p>
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><h2 id="非比较类算法"><a href="#非比较类算法" class="headerlink" title="非比较类算法"></a>非比较类算法</h2><h3 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h3><p>思想：通过计数而不是比较来进行排序，适用于范围较小的整数序列。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> n = <span class="number">10</span>; <span class="comment">// 数组大小</span></span><br><span class="line"><span class="type">int</span> arr[n+<span class="number">1</span>] = &#123;<span class="number">0</span>,<span class="number">10</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="type">int</span> maxvalue = <span class="number">10</span>;</span><br><span class="line"><span class="comment">//第一种实现</span></span><br><span class="line"><span class="function"><span class="type">int</span>* <span class="title">CountingSort1</span><span class="params">(<span class="type">int</span>* arr, <span class="type">int</span> length, <span class="type">int</span> maxvalue)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//分配计数数组</span></span><br><span class="line">    <span class="type">int</span> *count = <span class="keyword">new</span> <span class="type">int</span>[maxvalue + <span class="number">1</span>]; <span class="comment">// 下标从1开始</span></span><br><span class="line">    <span class="built_in">memset</span>(count, <span class="number">0</span>, <span class="built_in">sizeof</span>(count) * (maxvalue + <span class="number">1</span>));</span><br><span class="line">    <span class="comment">// 计数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= length; i++) &#123;</span><br><span class="line">        count[arr[i]]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//统计计数的累计值</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= maxvalue; i++) &#123;</span><br><span class="line">        count[i] += count[i - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> *output = <span class="keyword">new</span> <span class="type">int</span>[length + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= length; i++) &#123;</span><br><span class="line">        output[count[arr[i]]] = arr[i];</span><br><span class="line">        count[arr[i]]--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> output;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//第二种实现</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CountingSort2</span><span class="params">(<span class="type">int</span> *arr, <span class="type">int</span> length, <span class="type">int</span> maxValue)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> *bucket = <span class="keyword">new</span> <span class="type">int</span>[maxValue + <span class="number">1</span>];</span><br><span class="line">    <span class="type">int</span> sortedIndex = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> bucketLen = maxValue + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!bucket[arr[i]]) &#123; <span class="comment">// bucket计数为0时，初始化为0</span></span><br><span class="line">            bucket[arr[i]] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        bucket[arr[i]]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; bucketLen; j++) &#123;</span><br><span class="line">        <span class="keyword">while</span> (bucket[j] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            arr[sortedIndex] = j; </span><br><span class="line">            bucket[j]--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">CountingSort2</span>(arr, n, maxvalue);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;=n; i++) &#123;</span><br><span class="line">        cout &lt;&lt; arr[i] &lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：O(n+k)；O(n+k)；稳定；（用空间换时间）</p>
+<p>计数排序是一个稳定的排序算法。当输入的元素是 n 个 0到 k 之间的整数时，时间复杂度是O(n+k)，空间复杂度也是O(n+k)，其排序速度快于任何比较排序算法。当k不是很大并且序列比较集中时，计数排序是一个很有效的排序算法。</p>
+<h3 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h3><p>思想：桶排序是计数排序的升级版。它利用了函数的映射关系，高效与否的关键就在于这个映射函数的确定。桶排序 (Bucket sort)的工作的原理：假设输入数据服从均匀分布，将数据分到有限数量的桶里，每个桶再分别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排）。</p>
+<p>C++实现</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/01/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><ol>
+<li>满二叉树： 满了 $2^(k-1)$</li>
+<li>完全二叉树:</li>
+<li>二叉搜索树:</li>
+<li>平衡二叉搜索树:</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/01/18/%E4%BA%8C%E5%8F%89%E6%A0%91/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-git的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="git的使用"><a href="#git的使用" class="headerlink" title="git的使用"></a>git的使用</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">git commit # 提交内容</span><br><span class="line">git branch &lt;分支名&gt; # 创建分支</span><br><span class="line">git checkout &lt;分支名&gt; # 切换分支</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">分支与合并</span></span><br><span class="line">git merge &lt;分支名&gt;  #将&lt;分支名&gt;分支合并到当前分支</span><br><span class="line">git rebase &lt;分支名&gt; #将当前分支分支合并到&lt;分支名&gt;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在提交树上移动</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">HEAD -&gt; master -&gt; 哈希值</span></span><br><span class="line">git checkout &lt;哈希值&gt; # 移动HEAD到哈希值的位置</span><br><span class="line">git checkout &lt;master^&gt; # 移动HEAD到master^ 相当于“master 的父节点”的位置,^上移一次</span><br><span class="line">git checkout &lt;HEAD^&gt; #</span><br><span class="line">git checkout &lt;master~4&gt;  # 上移动四次</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">强制修改分支位置</span></span><br><span class="line">git branch -f master HEAD~3 # 将 master 分支强制指向 HEAD 的第 3 级父提交</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">远程仓库</span></span><br><span class="line">git clone XXXX</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">远程分支</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">远程分支有一个命名规范 如下:</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">&lt;remote name&gt;/&lt;branch name&gt;</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">因此，如果你看到一个名为 o/master 的分支，那么这个分支就叫 master，远程仓库的名称就是 o</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">大多数的开发人员会将它们主要的远程仓库命名为 origin，并不是 o。这是因为当你用 git <span class="built_in">clone</span> 某个仓库时，Git 已经帮你把远程   <span class="comment">#  仓库的名称设置为 origin 了</span></span></span><br><span class="line"></span><br><span class="line">git fetch XXX #从远程仓库获取数据</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git fetch 做了些什么?</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git fetch 完成了仅有的但是很重要的两步:</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">从远程仓库下载本地仓库中缺失的提交记录</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">更新远程分支指针(如 o/master)</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git fetch 实际上将本地仓库中的远程分支更新成了远程仓库相应分支最新的状态。</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git fetch 不会做的事</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git fetch 并不会改变你本地仓库的状态。它不会更新你的 master 分支，也不会修改你磁盘上的文件。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">理解这一点很重要，因为许多开发人员误以为执行了 git fetch 以后，他们本地仓库就与远程仓库同步了。它可能已经将进行这一操作所需<span class="comment"># 的所有数据都下载了下来，但是并没有修改你本地的文件。</span></span></span><br><span class="line"></span><br><span class="line">git pull #抓取并合并</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git pull 就是 git fetch 和 git merge &lt;just-fetched-branch&gt; 的缩写</span></span><br><span class="line"></span><br><span class="line">git push #负责将你的变更上传到指定的远程仓库，并在远程仓库上合并你的新提交记录 和pull刚好相反</span><br><span class="line">git pull --rebase； git push #快速的更新 master 分支并推送到远程</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/01/18/git%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-K近邻算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="K近邻算法"><a href="#K近邻算法" class="headerlink" title="K近邻算法"></a>K近邻算法</h1><p>定义：给定一些测试样本，基于某种距离度量标准找出训练集中与其最靠近的k个训练样本，再根据这k个“邻居”的信息来进行预测。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/01/18/K%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数据库常用指令"><a href="#数据库常用指令" class="headerlink" title="数据库常用指令"></a>数据库常用指令</h1><h2 id="SQL语法"><a href="#SQL语法" class="headerlink" title="SQL语法"></a>SQL语法</h2><h3 id="DDL-data-definition-language-数据库操作"><a href="#DDL-data-definition-language-数据库操作" class="headerlink" title="DDL(data definition language)-数据库操作"></a>DDL(data definition language)-数据库操作</h3><p>show databases; &#x2F;&#x2F;显示有哪些数据库</p>
+<p>create database 数据库名;  &#x2F;&#x2F;创建数据库</p>
+<p>use 数据库名; &#x2F;&#x2F;指定使用哪个数据库</p>
+<p>select database(); &#x2F;&#x2F;查看当前在哪个数据库</p>
+<p>drop database 数据库名; &#x2F;&#x2F;删除数据库</p>
+<h4 id="DDL-表操作"><a href="#DDL-表操作" class="headerlink" title="DDL-表操作"></a>DDL-表操作</h4><p>show tables; &#x2F;&#x2F;显示当前数据库中有哪些表;</p>
+<p>create table 表名(字段 字段类型，字段 字符类型 …); &#x2F;&#x2F; 创建表</p>
+<p>desc 表名; &#x2F;&#x2F; 查看当前表<br>show create table 表名; &#x2F;&#x2F; 显示建表语句</p>
+<p>alter table 表名 add&#x2F;modify&#x2F;change&#x2F;drop&#x2F;rename to…;</p>
+<p>drop table 表名; &#x2F;&#x2F; 删除表</p>
+<h3 id="DML-data-manipulation-language-介绍-增删改"><a href="#DML-data-manipulation-language-介绍-增删改" class="headerlink" title="DML(data manipulation language)-介绍 :增删改"></a>DML(data manipulation language)-介绍 :增删改</h3><ol>
+<li>添加数据（insert）</li>
+<li>修改数据（update)</li>
+<li>删除数据（delete）</li>
+</ol>
+<p>insert into 表名(字段1，字段2，…) values(值1，值2，….); &#x2F;&#x2F; 给指定字段添加数据</p>
+<p>insert into 表名 values(值1，值2，…); &#x2F;&#x2F; 给全部字段添加数据</p>
+<p>insert into 表名(字段名1，字段名2，…) values(值1，值2，…),(值1，值2，…),(值1，值2，…);</p>
+<p>insert into 表名 values(值1，值2，…),(值1，值2，…);</p>
+<h4 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h4><p>update 表名 set 字段名1&#x3D;值1，字段名2&#x3D;值2，…[where 条件];</p>
+<h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4><p>delete from 表名 [where 条件];</p>
+<h3 id="DQL-data-query-language-查询数据"><a href="#DQL-data-query-language-查询数据" class="headerlink" title="DQL(data query language)-查询数据"></a>DQL(data query language)-查询数据</h3><p>DQL-语法:</p>
+<p>select </p>
+<p>​	字段列表</p>
+<p>from</p>
+<p>​	表名列表</p>
+<p>where</p>
+<p>​	条件列表</p>
+<p>group by</p>
+<p>​	分组字段列表</p>
+<p>having </p>
+<p>​	分组后条件列表</p>
+<p>order by</p>
+<p>​	排序字段列表</p>
+<p>limit </p>
+<p>​	分页参数</p>
+<h4 id="DQL-基本查询"><a href="#DQL-基本查询" class="headerlink" title="DQL-基本查询"></a>DQL-基本查询</h4><ol>
+<li><p>查询多个字段</p>
+<p>select 字段1， 字段2，字段3，… from 表名；</p>
+<p>select* from 表名；</p>
+</li>
+<li><p>设置别名</p>
+<p>select 字段1[AS 别名1],字段2[AS 别名2] … from 表名；</p>
+</li>
+</ol>
+<p>基本查询：</p>
+<p>条件查询（where）</p>
+<p><strong>聚合函数</strong>（count, max, min, avg, sum） 将一列数据作为一个整体，进行纵向计算。作用于某一列（NULL值不参与）</p>
+<p><strong>分组查询</strong> ：select 字段列表 from 表名 [where 条件] group by 分组字段名 [having 分组后过滤条件]</p>
+<p><strong>排序查询</strong>：select 字段列表 from 表名 order by 字段1 排序方式，字段2 排序方式</p>
+<p><strong>分页查询</strong>：select 字段列表 from 表名 limit 起始索引,查询记录数;</p>
+<p>###DCL(data control language)</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/01/18/%E6%95%B0%E6%8D%AE%E5%BA%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-高等数学（上）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="高等数学（上）"><a href="#高等数学（上）" class="headerlink" title="高等数学（上）"></a>高等数学（上）</h1><h2 id="第一章-函数与极限"><a href="#第一章-函数与极限" class="headerlink" title="第一章 函数与极限"></a>第一章 函数与极限</h2><h3 id="数列极限的定义"><a href="#数列极限的定义" class="headerlink" title="数列极限的定义"></a>数列极限的定义</h3><p>​	自行脑补</p>
+<h3 id="数列极限的性质"><a href="#数列极限的性质" class="headerlink" title="数列极限的性质"></a>数列极限的性质</h3><ol>
+<li>唯一性</li>
+<li>有界性</li>
+<li>保号性</li>
+</ol>
+<h3 id="函数极限的定义（就是前面极限的延伸）"><a href="#函数极限的定义（就是前面极限的延伸）" class="headerlink" title="函数极限的定义（就是前面极限的延伸）"></a>函数极限的定义（就是前面极限的延伸）</h3><p>​	两种形式：1. 自变量趋于某个特定的点</p>
+<p>​				  	2. 自变量趋于无穷大</p>
+<h3 id="函数极限的性质"><a href="#函数极限的性质" class="headerlink" title="函数极限的性质"></a>函数极限的性质</h3><ol>
+<li>唯一性</li>
+<li>局部保号性</li>
+<li>大于性</li>
+<li>与数列极限的关系</li>
+</ol>
+<h3 id="无穷大与无穷小的定义"><a href="#无穷大与无穷小的定义" class="headerlink" title="无穷大与无穷小的定义"></a>无穷大与无穷小的定义</h3><p>​	什么是无穷小，就是极限趋于零（极限存在）</p>
+<p>​	什么是无穷大，就是极限趋于无穷（极限不存在）</p>
+<h3 id="极限运算法则"><a href="#极限运算法则" class="headerlink" title="极限运算法则"></a>极限运算法则</h3><p>​	定理1：无穷小相加</p>
+<p>​	定理2：有界（或常数\有限个无穷小）与无穷小的乘积</p>
+<p>​	定理3：加减提取极限（前提：都存在极限）</p>
+<p>​	定理4：同理定理3，相乘</p>
+<p>​	定理5：函数大，则极限大</p>
+<p>​	定理6：复合函数运算法则</p>
+<h3 id="极限存在法则-两个重要极限公式"><a href="#极限存在法则-两个重要极限公式" class="headerlink" title="极限存在法则 两个重要极限公式"></a>极限存在法则 两个重要极限公式</h3><p>​	两个公式</p>
+<p>​	夹逼准则</p>
+<p>​	单调有界数列必有极限</p>
+<p>​	柯西存在准则：是数列收敛的充分必要条件</p>
+<h3 id="无穷小的比较"><a href="#无穷小的比较" class="headerlink" title="无穷小的比较"></a>无穷小的比较</h3><p>​	同阶无穷小</p>
+<p>​	等价无穷小</p>
+<p>​	高阶无穷小</p>
+<p>​	低阶无穷小</p>
+<p>​	k阶无穷小</p>
+<h3 id="函数的连续性与间断点"><a href="#函数的连续性与间断点" class="headerlink" title="函数的连续性与间断点"></a>函数的连续性与间断点</h3><p>​	函数连续性定义：自行脑补</p>
+<p>​	左连续：</p>
+<p>​	右连续：</p>
+<p>​	间断点：1. 第一类间断点：存在左极限和有极限，再判定是否相等，分为可去间断点和跳跃间断点</p>
+<p>​				   2. 第二类间断点：不属于第一类的都是第二类，如：无穷间断点、震荡间断点</p>
+<h3 id="连续函数的运算与初等函数的连续性"><a href="#连续函数的运算与初等函数的连续性" class="headerlink" title="连续函数的运算与初等函数的连续性"></a>连续函数的运算与初等函数的连续性</h3><p>​	一句话总结：初等函数在定义域内都是连续的</p>
+<h3 id="闭区间上连续函数的性质"><a href="#闭区间上连续函数的性质" class="headerlink" title="闭区间上连续函数的性质"></a>闭区间上连续函数的性质</h3><p>​	定理1：有界与最值定理</p>
+<p>​	定理2：零点定理</p>
+<p>​	定理3：介值定理</p>
+<p>​	一致连续性。。。。</p>
+<h2 id="第二章-导数与微分"><a href="#第二章-导数与微分" class="headerlink" title="第二章 导数与微分"></a>第二章 导数与微分</h2><h3 id="导数定义"><a href="#导数定义" class="headerlink" title="导数定义"></a>导数定义</h3><p>因变量的增量与自变量的增量的比值极限如果存在即为导数</p>
+<h3 id="单侧导数"><a href="#单侧导数" class="headerlink" title="单侧导数"></a>单侧导数</h3><p>左导数</p>
+<p>右导数</p>
+<h3 id="导数的几何意义"><a href="#导数的几何意义" class="headerlink" title="导数的几何意义"></a>导数的几何意义</h3><p>就是切线的斜率</p>
+<h3 id="函数可导性与连续性的关系"><a href="#函数可导性与连续性的关系" class="headerlink" title="函数可导性与连续性的关系"></a>函数可导性与连续性的关系</h3><p>如果函数在x点处可导，那么函数在该点必连续，但连续不一定可导</p>
+<h3 id="函数求导法则"><a href="#函数求导法则" class="headerlink" title="函数求导法则"></a>函数求导法则</h3><p>​	定理1：和、差、积、商都具有导数。</p>
+<p>​	反函数求导法则：</p>
+<p>​	复合函数的求导法则：链式法则</p>
+<h3 id="高阶导数"><a href="#高阶导数" class="headerlink" title="高阶导数"></a>高阶导数</h3><p>二阶导数</p>
+<p>三阶导数</p>
+<h3 id="隐函数求导"><a href="#隐函数求导" class="headerlink" title="隐函数求导"></a>隐函数求导</h3><p>​	对数求导法</p>
+<p>​	由参数方程所确定的函数的导数</p>
+<h3 id="函数的微分"><a href="#函数的微分" class="headerlink" title="函数的微分"></a>函数的微分</h3><p>​	可微与可导是等价的</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/01/18/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%EF%BC%88%E4%B8%8A%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-NER标注准测" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="NER标注准则"><a href="#NER标注准则" class="headerlink" title="NER标注准则"></a>NER标注准则</h1><h2 id="命名实体识别"><a href="#命名实体识别" class="headerlink" title="命名实体识别"></a>命名实体识别</h2><p>李小姐 ： 全部标注为 NR</p>
+<p>养老院 ： 不标注</p>
+<p>XX别墅 :  全部标注为 NT</p>
+<p>XX酒店 ： 全部标注为 NT</p>
+<p>XX商场 :  全部标注为 NS</p>
+<p>XXKTV  :  全部标注为 NS</p>
+<p>a市大哥 : 只标注a市为 NS</p>
+<p>设计部部长 : 不标注</p>
+<p>王氏办公大楼: 只标注王氏为 NR</p>
+<p>外科   :  不标注</p>
+<p>外科医生 : 不标注</p>
+<p>亚太区  : NS</p>
+<p>港股   ： X</p>
+<p>XX街  ： NS</p>
+<p>大陆  ： X</p>
+<p>XX山庄 : NS</p>
+<p>XX山   : NS</p>
+<p>XX老爷子 : NR</p>
+<p>XX大少爷  : NR</p>
+<p>XX少奶奶  : NR</p>
+<p>XX的少奶奶 : 标注XX为NR</p>
+<p>XX学院    : X</p>
+<p>XX大学    : NT</p>
+<p>姓张没有  ： 标张 NR</p>
+<p>姓张的   : 标张 NR</p>
+<p>XX部   ： 非特指 X</p>
+<p>XX中学 : NS  eg 宛城中学</p>
+<p>xX咖啡屋 : NS</p>
+<p>XX市区  : XX为NS</p>
+<p>周家人 ： NR</p>
+<p>博物馆 : NS</p>
+<p>张家老宅 : NS</p>
+<p>体育中心 : X</p>
+<p>小宝： NR</p>
+<p>华夏： X</p>
+<p>XX投资公司 ： 标注XX投资 NT</p>
+<p>江城叶少 : 分开标注</p>
+<p>欧洲XX集团： NT<br>XX小姐: NR</p>
+<p>XX小公主 : NR</p>
+<p>唐秋家 : 标注为NR</p>
+<p>张家公子 : NR</p>
+<p>社城人： NR</p>
+<p>宋家大院： NS</p>
+<p>徐家父母： NR</p>
+<p>张氏家族：NR</p>
+<p>保安队长： X</p>
+<p>张家房产：标注张家 NR</p>
+<p>药物研究中心： NT</p>
+<p>邓家装备制造厂: 标邓家为NR </p>
+<p>大少： X</p>
+<p>XX大厦： NS</p>
+<p>美式： X</p>
+<p>XX小区： NS</p>
+<p>城西： NS</p>
+<p>姓张： 标张： NR</p>
+<p>表演系： X</p>
+<p>西城天大附中：分开标</p>
+<p>XX大楼：NS</p>
+<p>地狱门： X</p>
+<p>汉城医院：标注汉城医院 NT</p>
+<p>汉城大少爷：NR</p>
+<p>胡鑫慈善公司： NT</p>
+<p>苏城机场：NS</p>
+<p>XX大学XX学院 指标大学</p>
+<h2 id="原数据集"><a href="#原数据集" class="headerlink" title="原数据集"></a>原数据集</h2><p>酒店：NT ok<br>别墅：NT ok<br>中心：NT ok<br>中学：NT ok<br>医院：NT ok<br>大学：NT ok<br>幼儿园：NT<br>大陆：X  ok<br>花园：NT ok<br>XX园：NT ok<br>庄园：NT<br>姓X:<br>XX市：NS<br>集团：NT ok<br>公司：NT Ok<br>商场：NS ok<br>机场：NS ok<br>小区：NS ok<br>走廊：NS ok<br>公园: NS<br>餐厅: NS<br>老宅：NS<br>山庄：NS<br>歌剧院：NS<br>XXX品牌：NT<br>仓库：NS<br>办公室：NS<br>市场：NS<br>会所：NS<br>大厦：NS ok<br>XX村：NS<br>X国人：NR<br>天贸城、百利达<br>省人医<br>亚洲经济周刊<br>设计部：X<br>省城：X<br>xklxsw_376037 - xklxsw_382084<br>教育局、后勤部、采购部、XX部：X</p>
+<p>34000  30000  1000     3000</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/01/18/NER%E6%A0%87%E6%B3%A8%E5%87%86%E6%B5%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
