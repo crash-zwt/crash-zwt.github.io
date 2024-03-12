@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="NER标注准则命名实体识别李小姐 ： 全部标注为 NR 养老院 ： 不标注 XX别墅 :  全部标注为 NT XX酒店 ： 全部标注为 NT XX商场 :  全部标注为 NS XXKTV  :  全部标注为 NS a市大哥 : 只标注a市为 NS 设计部部长 : 不标注 王氏办公大楼: 只标注王氏为 NR 外科   :  不标注 外科医生 : 不标注 亚太区  : NS 港股   ： X XX街">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+<meta property="og:url" content="http://example.com/2024/01/18/%E5%85%B6%E4%BB%96/NER%E6%A0%87%E6%B3%A8%E5%87%86%E6%B5%8B/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="NER标注准则命名实体识别李小姐 ： 全部标注为 NR 养老院 ： 不标注 XX别墅 :  全部标注为 NT XX酒店 ： 全部标注为 NT XX商场 :  全部标注为 NS XXKTV  :  全部标注为 NS a市大哥 : 只标注a市为 NS 设计部部长 : 不标注 王氏办公大楼: 只标注王氏为 NR 外科   :  不标注 外科医生 : 不标注 亚太区  : NS 港股   ： X XX街">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-01-17T16:14:14.588Z">
+<meta property="article:modified_time" content="2024-01-17T16:14:14.589Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,235 +154,214 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-其他/NER标注准测" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="NER标注准则"><a href="#NER标注准则" class="headerlink" title="NER标注准则"></a>NER标注准则</h1><h2 id="命名实体识别"><a href="#命名实体识别" class="headerlink" title="命名实体识别"></a>命名实体识别</h2><p>李小姐 ： 全部标注为 NR</p>
+<p>养老院 ： 不标注</p>
+<p>XX别墅 :  全部标注为 NT</p>
+<p>XX酒店 ： 全部标注为 NT</p>
+<p>XX商场 :  全部标注为 NS</p>
+<p>XXKTV  :  全部标注为 NS</p>
+<p>a市大哥 : 只标注a市为 NS</p>
+<p>设计部部长 : 不标注</p>
+<p>王氏办公大楼: 只标注王氏为 NR</p>
+<p>外科   :  不标注</p>
+<p>外科医生 : 不标注</p>
+<p>亚太区  : NS</p>
+<p>港股   ： X</p>
+<p>XX街  ： NS</p>
+<p>大陆  ： X</p>
+<p>XX山庄 : NS</p>
+<p>XX山   : NS</p>
+<p>XX老爷子 : NR</p>
+<p>XX大少爷  : NR</p>
+<p>XX少奶奶  : NR</p>
+<p>XX的少奶奶 : 标注XX为NR</p>
+<p>XX学院    : X</p>
+<p>XX大学    : NT</p>
+<p>姓张没有  ： 标张 NR</p>
+<p>姓张的   : 标张 NR</p>
+<p>XX部   ： 非特指 X</p>
+<p>XX中学 : NS  eg 宛城中学</p>
+<p>xX咖啡屋 : NS</p>
+<p>XX市区  : XX为NS</p>
+<p>周家人 ： NR</p>
+<p>博物馆 : NS</p>
+<p>张家老宅 : NS</p>
+<p>体育中心 : X</p>
+<p>小宝： NR</p>
+<p>华夏： X</p>
+<p>XX投资公司 ： 标注XX投资 NT</p>
+<p>江城叶少 : 分开标注</p>
+<p>欧洲XX集团： NT<br>XX小姐: NR</p>
+<p>XX小公主 : NR</p>
+<p>唐秋家 : 标注为NR</p>
+<p>张家公子 : NR</p>
+<p>社城人： NR</p>
+<p>宋家大院： NS</p>
+<p>徐家父母： NR</p>
+<p>张氏家族：NR</p>
+<p>保安队长： X</p>
+<p>张家房产：标注张家 NR</p>
+<p>药物研究中心： NT</p>
+<p>邓家装备制造厂: 标邓家为NR </p>
+<p>大少： X</p>
+<p>XX大厦： NS</p>
+<p>美式： X</p>
+<p>XX小区： NS</p>
+<p>城西： NS</p>
+<p>姓张： 标张： NR</p>
+<p>表演系： X</p>
+<p>西城天大附中：分开标</p>
+<p>XX大楼：NS</p>
+<p>地狱门： X</p>
+<p>汉城医院：标注汉城医院 NT</p>
+<p>汉城大少爷：NR</p>
+<p>胡鑫慈善公司： NT</p>
+<p>苏城机场：NS</p>
+<p>XX大学XX学院 指标大学</p>
+<h2 id="原数据集"><a href="#原数据集" class="headerlink" title="原数据集"></a>原数据集</h2><p>酒店：NT ok<br>别墅：NT ok<br>中心：NT ok<br>中学：NT ok<br>医院：NT ok<br>大学：NT ok<br>幼儿园：NT<br>大陆：X  ok<br>花园：NT ok<br>XX园：NT ok<br>庄园：NT<br>姓X:<br>XX市：NS<br>集团：NT ok<br>公司：NT Ok<br>商场：NS ok<br>机场：NS ok<br>小区：NS ok<br>走廊：NS ok<br>公园: NS<br>餐厅: NS<br>老宅：NS<br>山庄：NS<br>歌剧院：NS<br>XXX品牌：NT<br>仓库：NS<br>办公室：NS<br>市场：NS<br>会所：NS<br>大厦：NS ok<br>XX村：NS<br>X国人：NR<br>天贸城、百利达<br>省人医<br>亚洲经济周刊<br>设计部：X<br>省城：X<br>xklxsw_376037 - xklxsw_382084<br>教育局、后勤部、采购部、XX部：X</p>
+<p>34000  30000  1000     3000</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/03/12/python/%E8%A3%85%E9%A5%B0%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2024-03-12T08:38:21.916Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-12</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/01/18/%E5%85%B6%E4%BB%96/NER%E6%A0%87%E6%B3%A8%E5%87%86%E6%B5%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/03/12/python/python%E4%B8%8B%E5%88%92%E7%BA%BF/" class="archive-article-date">
-  	<time datetime="2024-03-12T08:37:34.791Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-12</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/03/12/python/%E7%B1%BB%E6%96%B9%E6%B3%95-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95-%E7%B1%BB%E5%8F%98%E9%87%8F-%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F/" class="archive-article-date">
-  	<time datetime="2024-03-12T08:37:22.426Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-12</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2024/01/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/git%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/01/18/%E5%AE%9E%E4%B9%A0/%E5%AE%9E%E4%B9%A0%E6%9C%9F%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/03/12/python/%E8%BF%AD%E4%BB%A3%E5%99%A8-%E7%94%9F%E6%88%90%E5%99%A8-%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
-  	<time datetime="2024-03-12T08:37:18.285Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-12</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/02/22/%E7%AE%97%E6%B3%95/%E7%BA%BF%E6%AE%B5%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2024-02-22T10:48:14.879Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-22</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/02/05/python/python%E5%B8%B8%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2024-02-05T10:25:00.790Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/02/04/linux/linux%E5%B8%B8%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2024-02-04T11:06:48.478Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/02/04/%E5%85%B6%E4%BB%96/%E4%B9%A0%E6%83%AF/" class="archive-article-date">
-  	<time datetime="2024-02-04T10:35:12.051Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E5%85%B6%E4%BB%96/%E4%BF%9D%E7%A0%94%E5%92%B8%E9%B1%BC/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E7%AE%97%E6%B3%95/209%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -402,8 +385,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

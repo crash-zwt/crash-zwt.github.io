@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="git&#x2F;wget&#x2F;curl&#x2F;cmd&#x2F;pip&#x2F;yum 如何开启代理加速下载在内网环境中，服务器大多是屏蔽了外网连接来保障安全，当我们想要进行安装升级就比较麻烦，没办法直接进行，这时候我们可以通过将请求转发到内网中可以上外网的设备来进行安装升级操作。我们知道在 Linux 下很多软件源都在国外，在安装时下载十分缓慢，甚至直接失败，虽然我们可以通过将源替">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+<meta property="og:url" content="http://example.com/2024/01/18/linux/linux%E4%B8%AD%E4%BB%A3%E7%90%86%E4%B8%8B%E8%BD%BD/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="git&#x2F;wget&#x2F;curl&#x2F;cmd&#x2F;pip&#x2F;yum 如何开启代理加速下载在内网环境中，服务器大多是屏蔽了外网连接来保障安全，当我们想要进行安装升级就比较麻烦，没办法直接进行，这时候我们可以通过将请求转发到内网中可以上外网的设备来进行安装升级操作。我们知道在 Linux 下很多软件源都在国外，在安装时下载十分缓慢，甚至直接失败，虽然我们可以通过将源替">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-01-17T16:14:14.531Z">
+<meta property="article:modified_time" content="2024-01-17T16:14:14.532Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,235 +154,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-linux/linux中代理下载" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="git-wget-curl-cmd-pip-yum-如何开启代理加速下载"><a href="#git-wget-curl-cmd-pip-yum-如何开启代理加速下载" class="headerlink" title="git&#x2F;wget&#x2F;curl&#x2F;cmd&#x2F;pip&#x2F;yum 如何开启代理加速下载"></a>git&#x2F;wget&#x2F;curl&#x2F;cmd&#x2F;pip&#x2F;yum 如何开启代理加速下载</h1><p>在内网环境中，服务器大多是屏蔽了外网连接来保障安全，当我们想要进行安装升级就比较麻烦，没办法直接进行，这时候我们可以通过将请求转发到内网中可以上外网的设备来进行安装升级操作。<br>我们知道在 Linux 下很多软件源都在国外，在安装时下载十分缓慢，甚至直接失败，虽然我们可以通过将源替换成国内镜像源来达到加速下载的目的，但是还是有相当一部分优秀作品只存在于国外源，这时候我们就要考虑开启代理加速下载了。</p>
+<h2 id="开启-git-代理"><a href="#开启-git-代理" class="headerlink" title="开启 git 代理"></a>开启 git 代理</h2><p>GitHub 作为世界上最大的软件开源集结地，集中了大量开发人员的最大生产力，虽然我们访问主站正常，但是在 git clone 也是经常出错，而且 git 并不走系统代理，故而需要对它进行单独配置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:1080</span><br><span class="line">git config --global https.proxy https://127.0.0.1:1080</span><br></pre></td></tr></table></figure>
+<p>这个配置是永久性的，如果需要取消，则执行下面命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https. proxy</span><br></pre></td></tr></table></figure>
+
+<h2 id="wget代理"><a href="#wget代理" class="headerlink" title="wget代理"></a>wget代理</h2><p>wget 有两种方式，一是永久代理，通过配置文件实现，而是一次性执行，直接命令行后面加上参数：<br><strong>永久代理：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27; -Y on -e &quot;http_proxy=http://127.0.0.1:1080&quot;’&gt;~/.wgetrc</span><br><span class="line">wget http://example.com/1gb.zip</span><br></pre></td></tr></table></figure>
+<p><strong>单次代理：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -Y on -e &quot;http_proxy=http://127.0.0.1:1080&quot; http://example.com/1gb.zip</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明</strong></p>
+<ul>
+<li>-Y ：是否使用代理</li>
+<li>-e : 执行命令</li>
+</ul>
+<h2 id="curl代理"><a href="#curl代理" class="headerlink" title="curl代理"></a>curl代理</h2><p><strong>永久：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27; --proxy=&quot;127.0.0.1:1080&quot;’~/. curlr</span><br><span class="line">curl http://example. com/1gb. zip</span><br></pre></td></tr></table></figure>
+<p><strong>单次</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -x 127.0.0.1:1080 http: //example. com/1gb.zip</span><br></pre></td></tr></table></figure>
+<p>实测发现，如果用配置文件.curirc，参数尽量避免用简写，比如完整是–proxy，就不要用-x， 虽然单次是效果是一样的，但到配置文件可能会出现未知错误。</p>
+<h2 id="cmd代理"><a href="#cmd代理" class="headerlink" title="cmd代理"></a>cmd代理</h2><p>Windows CMD（命令符提示行）是比较特殊的命令行工具，我们在正 中设置的代理根本影响不到它（一般软件的代理设置都是取自！nternet Explorer&lt;IE＞ ），好在微软也考虑到了这个问题，给出了配置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set http_proxy=http:/7127.0.0.1:1080</span><br><span class="line">set https_proxy=http://127.0.0.1:1080</span><br></pre></td></tr></table></figure>
+
+<h2 id="pip代理"><a href="#pip代理" class="headerlink" title="pip代理"></a>pip代理</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip --proxy=http: //username :password@127.0.0.1:1080 install sunburnt</span><br></pre></td></tr></table></figure>
+
+<h2 id="yum代理"><a href="#yum代理" class="headerlink" title="yum代理"></a>yum代理</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo “proxy=http://127.0.0.1:1080&quot; &gt;&gt; /etc/yum. conf</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/03/12/python/%E8%A3%85%E9%A5%B0%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2024-03-12T08:38:21.916Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-12</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/01/18/linux/linux%E4%B8%AD%E4%BB%A3%E7%90%86%E4%B8%8B%E8%BD%BD/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/03/12/python/python%E4%B8%8B%E5%88%92%E7%BA%BF/" class="archive-article-date">
-  	<time datetime="2024-03-12T08:37:34.791Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-12</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/03/12/python/%E7%B1%BB%E6%96%B9%E6%B3%95-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95-%E7%B1%BB%E5%8F%98%E9%87%8F-%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F/" class="archive-article-date">
-  	<time datetime="2024-03-12T08:37:22.426Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-12</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2024/01/18/%E7%AE%97%E6%B3%95/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/03/12/python/%E8%BF%AD%E4%BB%A3%E5%99%A8-%E7%94%9F%E6%88%90%E5%99%A8-%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
-  	<time datetime="2024-03-12T08:37:18.285Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-12</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/02/22/%E7%AE%97%E6%B3%95/%E7%BA%BF%E6%AE%B5%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2024-02-22T10:48:14.879Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-22</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/02/05/python/python%E5%B8%B8%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2024-02-05T10:25:00.790Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/02/04/linux/linux%E5%B8%B8%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2024-02-04T11:06:48.478Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/02/04/%E5%85%B6%E4%BB%96/%E4%B9%A0%E6%83%AF/" class="archive-article-date">
-  	<time datetime="2024-02-04T10:35:12.051Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E5%85%B6%E4%BB%96/%E4%BF%9D%E7%A0%94%E5%92%B8%E9%B1%BC/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E7%AE%97%E6%B3%95/209%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -402,8 +339,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

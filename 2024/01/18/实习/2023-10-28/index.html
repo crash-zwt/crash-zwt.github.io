@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="2023-10-28Python中float类型、float32类型和float64类型的表示精度，所需内存及其之间的转换float类型和float64类型是一样的，都需要64个bits，而float32需要32个bits。精度方面，float类型和float64类型在十进制中可以有16位，而float32类型在十进制中有8位，如下： 12345678910111213&gt;&gt;&gt; x">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+<meta property="og:url" content="http://example.com/2024/01/18/%E5%AE%9E%E4%B9%A0/2023-10-28/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="2023-10-28Python中float类型、float32类型和float64类型的表示精度，所需内存及其之间的转换float类型和float64类型是一样的，都需要64个bits，而float32需要32个bits。精度方面，float类型和float64类型在十进制中可以有16位，而float32类型在十进制中有8位，如下： 12345678910111213&gt;&gt;&gt; x">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-01-17T16:14:14.534Z">
+<meta property="article:modified_time" content="2024-01-17T16:14:14.535Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,235 +154,183 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-实习/2023-10-28" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="2023-10-28"><a href="#2023-10-28" class="headerlink" title="2023-10-28"></a>2023-10-28</h1><h2 id="Python中float类型、float32类型和float64类型的表示精度，所需内存及其之间的转换"><a href="#Python中float类型、float32类型和float64类型的表示精度，所需内存及其之间的转换" class="headerlink" title="Python中float类型、float32类型和float64类型的表示精度，所需内存及其之间的转换"></a>Python中float类型、float32类型和float64类型的表示精度，所需内存及其之间的转换</h2><p>float类型和float64类型是一样的，都需要64个bits，而float32需要32个bits。<br>精度方面，float类型和float64类型在十进制中可以有16位，而float32类型在十进制中有8位，如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.float64(<span class="number">1</span>/<span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line"><span class="number">0.3333333333333333</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = np.float32(x)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y</span><br><span class="line"><span class="number">0.33333334</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p = <span class="number">1000</span>*(<span class="number">1</span>/<span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p</span><br><span class="line"><span class="number">333.3333333333333</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>q = np.float32(p)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>q</span><br><span class="line"><span class="number">333.33334</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h3><h3 id="float’转’float64’"><a href="#float’转’float64’" class="headerlink" title="float’转’float64’"></a>float’转’float64’</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = np.float64(x) <span class="comment"># x原本是’float’类型的</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="’float64’转‘float’"><a href="#’float64’转‘float’" class="headerlink" title="’float64’转‘float’"></a>’float64’转‘float’</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y = np.<span class="built_in">float</span>(y) <span class="comment">#x原本是’float64’类型的</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="torch-tensor中的类型转换"><a href="#torch-tensor中的类型转换" class="headerlink" title="torch.tensor中的类型转换"></a>torch.tensor中的类型转换</h2><h3 id="1-当出现以下错误时很可能需要进行类型转换"><a href="#1-当出现以下错误时很可能需要进行类型转换" class="headerlink" title="(1)当出现以下错误时很可能需要进行类型转换"></a>(1)当出现以下错误时很可能需要进行类型转换</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM</span><br></pre></td></tr></table></figure>
+
+<p>这个错误是由于数据类型不一致造成的。</p>
+<h3 id="2-转为float32"><a href="#2-转为float32" class="headerlink" title="(2)转为float32"></a>(2)转为float32</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = a.to(torch.float32)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-转为float64"><a href="#3-转为float64" class="headerlink" title="(3)转为float64"></a>(3)转为float64</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = a.to(torch.float64)</span><br></pre></td></tr></table></figure>
+
+<h2 id="python-numpy-float-和-numpy-float64-之间的区别"><a href="#python-numpy-float-和-numpy-float64-之间的区别" class="headerlink" title="python - numpy.float 和 numpy.float64 之间的区别"></a>python - numpy.float 和 numpy.float64 之间的区别</h2><p><code>numpy.float</code> 和 <code>numpy.float64</code> 之间似乎存在细微差别。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x_date = np.float32(np.random.rand(<span class="number">2</span>,<span class="number">100</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(np.<span class="built_in">float</span>(<span class="number">1</span>/<span class="number">3</span>))</span><br><span class="line"><span class="built_in">print</span>(np.float32(<span class="number">1</span>/<span class="number">3</span>))</span><br><span class="line"><span class="built_in">print</span>(np.float64(<span class="number">1</span>/<span class="number">3</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">isinstance</span>(<span class="number">2.0</span>, np.<span class="built_in">float</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">isinstance</span>(<span class="number">2.0</span>, np.float64))</span><br><span class="line"><span class="comment"># 0.3333333333333333</span></span><br><span class="line"><span class="comment"># 0.33333334</span></span><br><span class="line"><span class="comment"># 0.3333333333333333</span></span><br><span class="line"><span class="comment"># True</span></span><br><span class="line"><span class="comment"># False</span></span><br></pre></td></tr></table></figure>
+
+<p><code>np.float</code> 是 python <code>float</code> 类型的别名。 <code>np.float32</code> 和 <code>np.float64</code> 是特定于 numpy 的 32 位和 64 位浮点类型。</p>
+<h2 id="np-random-rand-d0-d1-d2……dn"><a href="#np-random-rand-d0-d1-d2……dn" class="headerlink" title="np.random.rand(d0,d1,d2……dn)"></a>np.random.rand(d0,d1,d2……dn)</h2><p>作用：  通过本函数可以返回一个或一组服从“0~1”<strong>均匀分布</strong>的随机样本值。随机样本取值范围是[0,1)，不包括1。 </p>
+<p>##np.random.randn()</p>
+<p>作用：  通过本函数可以返回一个或一组服从<strong>标准正态分布</strong>的随机样本值。</p>
+<p>在-1.96～+1.96范围内曲线下的面积等于0.9500（即取值在这个范围的概率为95%），在-2.58～+2.58范围内曲线下面积为0.9900（即取值在这个范围的概率为99%）.<br>因此，由 np.random.randn()函数所产生的随机样本基本上取值主要在<code>-1.96~+1.96</code>之间，当然也不排除存在较大值的情形，只是概率较小而已。</p>
+<h2 id="np-dot-使用方法"><a href="#np-dot-使用方法" class="headerlink" title="np.dot()使用方法"></a>np.dot()使用方法</h2><p>np.dot()函数主要有两个功能，<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%90%91%E9%87%8F%E7%82%B9%E7%A7%AF&spm=1001.2101.3001.7020">向量点积</a>和矩阵乘法</p>
+<p>np.dot(a, b), 其中a为一维的向量，b为一维的向量，当然这里a和b都是np.ndarray类型的, 此时因为是一维的所以是向量点积。</p>
+<p>这里需要注意的是一维矩阵和一维向量的区别，一维向量的shape是(5, ), 而一维矩阵的shape是(5, 1), 若两个参数a和b都是一维向量则是计算的点积，但是当其中有一个是矩阵时（包括一维矩阵），dot便进行矩阵乘法运算。所以如果是一个向量和一个矩阵相乘，这个向量会自动转换为一维矩阵进行计算。<br>注意：np.dot(a, b) 当a为向量，b为矩阵时，需要a(dim[0]) &#x3D;&#x3D; b(dim[0])</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line">b = np.array([<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>])</span><br><span class="line"><span class="built_in">print</span>(np.dot(a, b))</span><br><span class="line"></span><br><span class="line"><span class="number">130</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = np.random.randint(<span class="number">0</span>, <span class="number">10</span>, size = (<span class="number">5</span>, <span class="number">5</span>))</span><br><span class="line">b = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line">c = np.random.randn(<span class="number">5</span>,<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;the shape of a is&quot;</span> + <span class="built_in">str</span>(a.shape))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;the shape of b is&quot;</span> + <span class="built_in">str</span>(b.shape))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;the shape of c is&quot;</span> + <span class="built_in">str</span>(c.shape))</span><br><span class="line"><span class="built_in">print</span>(np.dot(a, b))</span><br><span class="line"><span class="built_in">print</span>(np.dot(b, a))</span><br><span class="line"><span class="built_in">print</span>(np.dot(a, c))</span><br><span class="line"></span><br><span class="line">the shape of a <span class="keyword">is</span>(<span class="number">5</span>, <span class="number">5</span>)</span><br><span class="line">the shape of b <span class="keyword">is</span>(<span class="number">5</span>,)</span><br><span class="line">the shape of c <span class="keyword">is</span>(<span class="number">5</span>, <span class="number">2</span>)</span><br><span class="line">[<span class="number">71</span> <span class="number">55</span> <span class="number">44</span> <span class="number">55</span> <span class="number">86</span>]</span><br><span class="line">[<span class="number">59</span> <span class="number">67</span> <span class="number">40</span> <span class="number">55</span> <span class="number">86</span>]</span><br><span class="line">[[ <span class="number">16.77087143</span> -<span class="number">17.96553024</span>]</span><br><span class="line"> [ -<span class="number">3.64334424</span> -<span class="number">19.28817577</span>]</span><br><span class="line"> [ -<span class="number">2.13340629</span> -<span class="number">13.28131361</span>]</span><br><span class="line"> [ <span class="number">15.34673697</span> -<span class="number">12.78145996</span>]</span><br><span class="line"> [ <span class="number">16.55390886</span> -<span class="number">14.23436855</span>]]</span><br></pre></td></tr></table></figure>
+
+<h2 id="numpy-random-randint-low-high-None-size-None-dtype-’l’"><a href="#numpy-random-randint-low-high-None-size-None-dtype-’l’" class="headerlink" title="numpy.random.randint(low, high&#x3D;None, size&#x3D;None, dtype&#x3D;’l’)"></a>numpy.random.randint(low, high&#x3D;None, size&#x3D;None, dtype&#x3D;’l’)</h2><p>函数的作用是，返回一个随机整型数，范围从低（包括）到高（不包括），即[low, high)。<br>如果没有写参数high的值，则返回[0,low)的值。</p>
+<h2 id="tf-random-uniform-1-2-1-0-1-0"><a href="#tf-random-uniform-1-2-1-0-1-0" class="headerlink" title="tf.random_uniform([1, 2], -1.0, 1.0)"></a>tf.random_uniform([1, 2], -1.0, 1.0)</h2><p>功能：从一个<strong>均匀分布[low,high)中随机采样</strong>，注意定义域是<strong>左闭右开</strong>，即包含low，不包含high.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">random.uniform(shape,</span><br><span class="line">                   minval=<span class="number">0</span>,</span><br><span class="line">                   maxval=<span class="literal">None</span>,</span><br><span class="line">                   dtype=dtypes.float32,</span><br><span class="line">                   seed=<span class="literal">None</span>,</span><br><span class="line">                   name=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="numpy中matmul的使用"><a href="#numpy中matmul的使用" class="headerlink" title="numpy中matmul的使用"></a><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=numpy&spm=1001.2101.3001.7020">numpy</a>中matmul的使用</h2><p>numpy.matmul 函数返回两个数组的矩阵乘积。当两个数组都是<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84&spm=1001.2101.3001.7020">二维数组</a>的时候，就是数学上的两个矩阵的乘积。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy.matlib </span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"> </span><br><span class="line">a = [[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">1</span>]] </span><br><span class="line">b = [[<span class="number">4</span>,<span class="number">1</span>],[<span class="number">2</span>,<span class="number">2</span>]] </span><br><span class="line"><span class="built_in">print</span> (np.matmul(a,b))</span><br><span class="line"></span><br><span class="line">[[<span class="number">4</span>  <span class="number">1</span>] </span><br><span class="line"> [<span class="number">2</span>  <span class="number">2</span>]]</span><br></pre></td></tr></table></figure>
+
+<h2 id="EagerTensor-与-Tensor"><a href="#EagerTensor-与-Tensor" class="headerlink" title="EagerTensor 与 Tensor"></a>EagerTensor 与 <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Tensor&spm=1001.2101.3001.7020">Tensor</a></h2><p>Tensor：tensorflow.python.framework.ops.Tensor<br>EagerTensor： tensorflow.python.framework.ops.EagerTensor</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/03/12/python/%E8%A3%85%E9%A5%B0%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2024-03-12T08:38:21.916Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-12</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/01/18/%E5%AE%9E%E4%B9%A0/2023-10-28/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/03/12/python/python%E4%B8%8B%E5%88%92%E7%BA%BF/" class="archive-article-date">
-  	<time datetime="2024-03-12T08:37:34.791Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-12</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/03/12/python/%E7%B1%BB%E6%96%B9%E6%B3%95-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95-%E7%B1%BB%E5%8F%98%E9%87%8F-%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F/" class="archive-article-date">
-  	<time datetime="2024-03-12T08:37:22.426Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-12</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2024/01/18/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/01/18/%E7%AE%97%E6%B3%95/%E7%BA%BF%E6%AE%B5%E6%A0%91images/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/03/12/python/%E8%BF%AD%E4%BB%A3%E5%99%A8-%E7%94%9F%E6%88%90%E5%99%A8-%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
-  	<time datetime="2024-03-12T08:37:18.285Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-12</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/02/22/%E7%AE%97%E6%B3%95/%E7%BA%BF%E6%AE%B5%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2024-02-22T10:48:14.879Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-22</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/02/05/python/python%E5%B8%B8%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2024-02-05T10:25:00.790Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/02/04/linux/linux%E5%B8%B8%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2024-02-04T11:06:48.478Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/02/04/%E5%85%B6%E4%BB%96/%E4%B9%A0%E6%83%AF/" class="archive-article-date">
-  	<time datetime="2024-02-04T10:35:12.051Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E5%85%B6%E4%BB%96/%E4%BF%9D%E7%A0%94%E5%92%B8%E9%B1%BC/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/01/18/%E7%AE%97%E6%B3%95/209%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/" class="archive-article-date">
-  	<time datetime="2024-01-17T16:14:14.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -402,8 +354,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
